@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Eddies Laravel Tests</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
                 position: relative;
             }
 
-            .top-right {
+            .top-left {
                 position: absolute;
-                right: 10px;
+                left: 10px;
                 top: 18px;
             }
 
@@ -66,29 +66,32 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+<!--
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-left links">
                     @auth
                     	<p>Welcome {{ Auth::user()->name }},</p>
-                        <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
             @endif
+-->
 
-            <div class="content">
+            <div class="container-fluid">
                 <div class="title m-b-md">
                     Eddie Power's Development Blog.
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/">Home</a>
+                    <a href="/analytics/dashboard">Analytics Test Query</a>
+                    @auth
+                      <a href="/home">User Dashboard</a>
+                      <a href="/author">Author Dummy Data</a>
+                      <a href="/author/create">Add more Author Dummy Data</a>                      
+                    @endauth
                 </div>
             </div>
         </div>
